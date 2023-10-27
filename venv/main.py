@@ -21,7 +21,7 @@ df_UsersNotRecommend = pd.read_csv('Include/bottom_3_por_anio.csv')
 
 df_sentiment_analysis = pd.read_csv('Include/def sentiment_analysis.csv')
 
-def_recomendacion_juego= pd.read_csv('Include/Include\def recomendacion_juego.csv.csv')
+def_recomendacion_juego= pd.read_csv('Include/Include\def recomendacion_juego.csv')
 X= pd.read_csv('Include/def recomendacion_juego_111.csv')
 
 
