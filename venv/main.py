@@ -145,7 +145,7 @@ def recomendacion_juego(id: int):
     selected_game = X[X["id"] == id]
 
     if selected_game.empty:
-        return json.dumps({"message": "Juego no encontrado"})
+        return json.dumps({"message": "ID de Juego no encontrado"})
 
     # Calcular la similitud de coseno entre el juego seleccionado y todos los demás juegos
     cosine_sim = cosine_similarity(selected_game.iloc[:, :-1], X.iloc[:, :-1])
