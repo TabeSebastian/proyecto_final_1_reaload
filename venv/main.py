@@ -1,22 +1,23 @@
 from fastapi import FastAPI
 import pandas as pd
 import json
+from pathlib import Path
 
 app = FastAPI()
 
 # Carga el DataFrame con los datos fuera de la función
 
-df_PlayTimeGenre = pd.read_csv('/venv/Include/def PlayTimeGenre_final_listo.csv')
+df_PlayTimeGenre = pd.read_csv('venv\Include\def PlayTimeGenre_final_listo.csv')
 
-ruta_archivo_json = '/venv/Include/def UserForGenre.json'
+ruta_archivo_json = 'venv/Include/def UserForGenre.json'
 with open(ruta_archivo_json, 'r') as archivo_json:
     datosUserForGenre = json.load(archivo_json)
 
-df_UsersRecommend = pd.read_csv('/venv/Include/def UsersRecommend.csv')
+df_UsersRecommend = pd.read_csv('venv/Include/def UsersRecommend.csv')
 
-df_UsersNotRecommend = pd.read_csv('/venv/Include/bottom_3_por_anio.csv')
+df_UsersNotRecommend = pd.read_csv('venv/Include/bottom_3_por_anio.csv')
 
-df_sentiment_analysis = pd.read_csv('/venv/Include/def sentiment_analysis.csv')
+df_sentiment_analysis = pd.read_csv('venv/Include/def sentiment_analysis.csv')
 
 
 #instanciamos las api y sus rutas
