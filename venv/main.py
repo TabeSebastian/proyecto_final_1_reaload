@@ -7,7 +7,7 @@ app = FastAPI()
 
 # Carga el DataFrame con los datos fuera de la función
 
-df_PlayTimeGenre = pd.read_csv('venv\Include\def PlayTimeGenre_final_listo.csv')
+df_PlayTimeGenre = pd.read_csv('venv/Include/def PlayTimeGenre_final_listo.csv')
 
 ruta_archivo_json = 'venv/Include/def UserForGenre.json'
 with open(ruta_archivo_json, 'r') as archivo_json:
