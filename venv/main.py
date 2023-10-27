@@ -2,6 +2,8 @@ from fastapi import FastAPI
 import pandas as pd
 import json
 from pathlib import Path
+from sklearn.metrics.pairwise import cosine_similarity
+from sklearn.preprocessing import OneHotEncoder
 
 app = FastAPI()
 
@@ -19,12 +21,16 @@ df_UsersNotRecommend = pd.read_csv('Include/bottom_3_por_anio.csv')
 
 df_sentiment_analysis = pd.read_csv('Include/def sentiment_analysis.csv')
 
+def_recomendacion_juego= pd.read_csv('Include/Include\def recomendacion_juego.csv.csv')
+X= pd.read_csv('Include/def recomendacion_juego_111.csv')
+
+
 
 #instanciamos las api y sus rutas
 
 @app.get('/')
 def main():
-    return {"mensaje": "BIENVENIDOS"}
+    return {"mensaje": "BIENVENIDOS A TODOS"}
 
 @app.get('/PlayTimeGenre/{genero}')
 def PlayTimeGenre(genero: str):
@@ -131,3 +137,24 @@ def sentiment_analysis(anio: int):
     analisis_dict = analisis_sentimiento.to_dict()
 
     return {"Análisis de sentimiento para el año " + str(anio): analisis_dict}
+
+@app.get('/recomendacion_juego/{id}')
+def recomendacion_juego(id: int):
+
+    # Filtrar el DataFrame para obtener los datos del juego seleccionado
+    selected_game = X[X["id"] == id]
+
+    if selected_game.empty:
+        return json.dumps({"message": "Juego no encontrado"})
+
+    # Calcular la similitud de coseno entre el juego seleccionado y todos los demás juegos
+    cosine_sim = cosine_similarity(selected_game.iloc[:, :-1], X.iloc[:, :-1])
+
+    # Obtener los índices de los juegos más similares sacando el propio juego
+    similar_games_indices = cosine_sim[0].argsort()[-6:-1][::-1]
+
+    # Obtener los nombres de los juegos recomendados
+    recommended_games = def_recomendacion_juego.iloc[similar_games_indices]["app_name"].tolist()
+
+    # Devolver los juegos recomendados en formato JSON
+    return json.dumps({"juegos recomendados de igual genero ": recommended_games})
