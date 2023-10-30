@@ -6,14 +6,23 @@ una plataforma multinacional de videojuegos.
 El objetivo de este sistema es recomendar juegos a los usuarios en función de sus preferencias y reseñas.
 
 Contenido
+
 Descripción
+
 Requerimientos
+
 Transformaciones
+
 Desarrollo de la API
+
 Deployment
+
 Análisis Exploratorio de los Datos (EDA)
+
 Modelo de Aprendizaje Automático
+
 Funcionalidades de la API
+
 
 
 1. Descripción
