@@ -49,7 +49,7 @@ La sección de "Transformaciones" describe las acciones realizadas para asegurar
 Esto incluye la preparación de los datos para su uso en el desarrollo de la API y el modelo de recomendación.
 
 5. Desarrollo de la API
-La API resultante se puede implementar en una variedad de servicios, como Render, Railway o cualquier otro que permita el acceso a la API desde la web.
+La API resultante se implemento en  Render que permita el acceso a la API desde la web.
 
 6. Deployment
 7. Análisis Exploratorio de los Datos (EDA)
@@ -84,7 +84,6 @@ UsersNotRecommend(año: int): Devuelve el top 3 de juegos MENOS recomendados por
 
 sentiment_analysis(año: int): Según el año de lanzamiento, devuelve una lista con la cantidad de registros de reseñas de usuarios categorizados con un análisis de sentimiento.
 
-La API es accesible según los criterios de API REST o RESTful y puede ser consumida desde cualquier dispositivo conectado a Internet.
 
 Este proyecto ha permitido mejorar la experiencia de juego para los usuarios de Steam al proporcionar recomendaciones personalizadas basadas en sus preferencias y reseñas, 
 destacando la transformación de datos como un elemento clave en su éxito.
