@@ -40,16 +40,14 @@ Desarrollo de la API: Se implementó una API utilizando el framework FastAPI que
 para un género, la identificación del usuario con más horas jugadas para un género, la recomendación de los juegos más recomendados y no recomendados por los usuarios, 
 y el análisis de sentimiento de reseñas por año.
 
-Machine Learning de Recomendación: Se desarrolló un sistema de recomendación de videojuegos que incluye dos enfoques: el sistema de recomendación Item-Item, 
-que recomienda juegos similares a un juego dado, y el sistema de recomendación User-Item, que recomienda juegos a un usuario basándose en usuarios similares y 
-sus preferencias de juego.
+Machine Learning de Recomendación: Se desarrolló un sistema de recomendación de videojuegos Item-Item, que recomienda juegos similares a un juego dado.
 
 3. Transformaciones
 La sección de "Transformaciones" describe las acciones realizadas para asegurarse de que los datos se ajusten a las necesidades del proyecto.
 Esto incluye la preparación de los datos para su uso en el desarrollo de la API y el modelo de recomendación.
 
 5. Desarrollo de la API
-La API resultante se implemento en  Render que permita el acceso a la API desde la web.
+La API resultante se implemento en  Render que permita el acceso a la API desde la web, donde se toma el proyecto desde github.
 
 6. Deployment
 7. Análisis Exploratorio de los Datos (EDA)
@@ -57,22 +55,13 @@ Antes de entrenar el modelo, se realizó un análisis exploratorio de los datos 
 interesantes. Esto se hizo manualmente para comprender mejor los datos.
 
 9. Modelo de Aprendizaje Automático
-Se creó un modelo de recomendación de videojuegos basado en dos enfoques:
-
 Sistema de Recomendación Item-Item: Recomienda juegos similares a un juego dado utilizando la similitud del coseno.
-
-Sistema de Recomendación User-Item: Recomienda juegos a un usuario basándose en usuarios similares y sus preferencias de juego.
-
-Ambos sistemas de recomendación se implementaron y se agregaron a la API.
+El sistema de  recomendación se implemento y se agregaron a la API.
 
 8. Funcionalidades de la API
 La API ofrece las siguientes funcionalidades:
 
 recomendacion_juego(id de producto): Devuelve una lista con 5 juegos recomendados similares al juego ingresado.
-
-recomendacion_usuario(id de usuario): Devuelve una lista con 5 juegos recomendados para el usuario ingresado.
-
-Además, se han agregado las siguientes funciones:
 
 PlayTimeGenre(genero: str): Devuelve el año con más horas jugadas para un género dado.
 
@@ -85,5 +74,8 @@ UsersNotRecommend(año: int): Devuelve el top 3 de juegos MENOS recomendados por
 sentiment_analysis(año: int): Según el año de lanzamiento, devuelve una lista con la cantidad de registros de reseñas de usuarios categorizados con un análisis de sentimiento.
 
 
-Este proyecto ha permitido mejorar la experiencia de juego para los usuarios de Steam al proporcionar recomendaciones personalizadas basadas en sus preferencias y reseñas, 
-destacando la transformación de datos como un elemento clave en su éxito.
+Que podemos encontrar en este repositorio :
+- Readme.md : nos da una breve resena de la api .
+- main.py : codigo principal donde esta la api
+- requirement.txt : librerias necesarias para ejecucion del main
+- notas personales : archivos tipo jupiter donde se fueron elavaborando todos los procesos y limpieza para obtener el main.py
