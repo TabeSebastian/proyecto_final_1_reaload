@@ -79,3 +79,4 @@ Que podemos encontrar en este repositorio :
 - main.py : codigo principal donde esta la api
 - requirement.txt : librerias necesarias para ejecucion del main
 - notas personales : archivos tipo jupiter donde se fueron elavaborando todos los procesos y limpieza para obtener el main.py
+- carpeta Include : se encuentran los datasets ya limpios y obtimizados para ser utilizados.
